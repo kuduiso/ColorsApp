@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/screen_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_title_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/color_title"
+        android:text="@string/color_title"
+        android:textColor="@color/colorOnSecondary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_desc_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/color_desc"
+        android:text="@string/color_desc"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_color"
+        app:layout_constraintStart_toEndOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/redChannelWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text_input_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_desc_color"
+        app:layout_constraintStart_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/redChannel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapCharacters"
+            android:digits="01234567890ABCDEFabcdef"
+            android:hint="@string/red_channel_text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/greenChannelWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text_input_color"
+        app:layout_constraintTop_toBottomOf="@id/redChannelWrapper"
+        app:layout_constraintStart_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/greenChannel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:digits="01234567890ABCDEFabcdef"
+            android:hint="@string/green_channel_text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/blueChannelWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/text_input_color"
+        app:layout_constraintTop_toBottomOf="@id/greenChannelWrapper"
+        app:layout_constraintStart_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/blueChannel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:digits="01234567890ABCDEFabcdef"
+            android:hint="@string/blue_channel_text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/button_color"
+        android:text="@string/button_color_text"
+        app:layout_constraintTop_toBottomOf="@id/blueChannelWrapper"/>
+
+    <TextView
+        android:id="@+id/tv_color_result"
+        android:layout_width="match_parent"
+        style="@style/color_display"
+        android:text="@string/color_result_text"
+        app:layout_constraintTop_toBottomOf="@id/btn_color" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
